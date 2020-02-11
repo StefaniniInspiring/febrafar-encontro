@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +8,7 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   max = 3;
   hoje = new Date();
@@ -110,8 +111,20 @@ export class HomePage {
   }
 
   print() {
-    
-    this.products
+    let indexArray = [];
+    for (let i = 0 ; i < this.products.length; i ++) {
+      if (this.products[i].selected) {
+        indexArray.push(i);
+      }
+    }
+
+    this.router.navigate(['/print'], {
+      queryParams: {
+        indexes: JSON.stringify(indexArray),
+        name: 'Gabriel',
+        rede: 'Entrefarma'
+      }
+      });
   }
 
 }

@@ -1,43 +1,91 @@
 <ion-content>
   <div class="ticket-bg"></div>
   <div class="ticket">
-    <img
-				class="logo"
-				src="${urlImg}"
-			  alt="Logo"
-			/>
     <p class="name">
-      Nome
+      {{ name }}
     </p>
     <p class="cpf">
-      Rede Drogamais
+      {{ rede }}
     </p>
-    <span class="slogan"
-      >Confira as ofertas exclusivas que selecionamos especialmente para você:
+    <div class="logo">
+      Seja bem-vindo à<br>
+      assembleia Febrafar
+    </div>
+    <span class="slogan">
+      Confira as ofertas exclusivas que selecionamos especialmente para você:
     </span>
     <div class="header-img">
       <img src="../../assets/imgs/exclusive-offers-header.svg" />
     </div>
     <div class="offers">
+      <ng-template [ngIf]="true" *ngFor="let i of ids; let last = last">
+        <div class="offer">
+          <div>
+            <p class="product-name">
+              {{ products[i].name }}
+            </p>
+            <p class="product-description">
+            </p>
+          </div>
+          <span *ngIf="products[i].type == 'fixed'">
+            <p class="discount-label full-price">
+              R$ 2,00
+            </p>
+            <p class="discount fixed">
+              0<span>,00</span>
+            </p>
+          </span>
+
+          <span *ngIf="products[i].type == 'desconto'">
+            <p class="discount percentual">
+              100
+            </p>
+            <p class="discount-label">
+              desconto
+            </p>
+          </span>
+
+          <span *ngIf="products[i].type == 'desconto_unidade'">
+            <p class="discount quantidade">
+              3
+            </p>
+            <p class="discount-label">
+              pague 0
+            </p>
+          </span>
+        </div>
+        <hr *ngIf="!last" />
+      </ng-template>
+    <div class="header-img">
+      <img src="../../assets/imgs/suggestion-offers-header.svg" />
+    </div>
+    <div class="offers">
       <div class="offer">
         <div>
           <p class="product-name">
-            Nome
+            Jantar Especial de Boas-Vindas Germed
           </p>
           <p class="product-description">
           </p>
         </div>
         <span>
-          <p class="discount-label full-price">
-            R$ 2,00
+          <p class="discount">
+            19h
           </p>
-          <p class="discount fixed">
-            0<span>,00</span>
+          <p class="discount-label">
+            17/02
           </p>
         </span>
-      </div>
-      <hr />
+        </div>
+        <hr />
     </div>
+    <p class="endereco">
+      Museu do Futebol - Estádio do Pacaembu
+      <br>
+      Praça Charles Miler, s/n - Pacaembu, São Paulo
+    </p>
+    <hr>
+  </div>
   <div class="foofer">
     <p class="legal">
       Você tem em suas mãos uma amostra da nova funcionalidade do App do PEC:

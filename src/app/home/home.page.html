@@ -68,7 +68,7 @@
         {{ totalSelected }} / {{ max }}
       </ion-col>
       <ion-col class="ion-text-right">
-        <ion-button>
+        <ion-button [disabled]="total == 0" (click)="print()">
           <ion-icon name="print" slot="start"></ion-icon>
           Imprimir Brindes
         </ion-button>

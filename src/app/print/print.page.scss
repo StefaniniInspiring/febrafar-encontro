@@ -1,3 +1,9 @@
+* {
+  font-family: 'Roboto', arial;
+  --ion-font-family: 'Roboto', arial !important;
+	--ion-default-font: 'Roboto', arial !important;
+}
+
 ion-content {
   margin: 0;
 }
@@ -51,28 +57,34 @@ p {
   width: 80mm;
   max-width: 80mm;
   display: grid;
-  grid-template-areas: 'logo' 'name' 'cpf' 'slogan' 'header' 'offers' 'footer';
+  grid-template-areas: 'name' 'cpf' 'logo' 'slogan' 'header' 'offers' 'footer';
 }
 .logo {
   grid-area: logo;
   justify-self: center;
-  max-width: 60mm;
-  max-height: 18mm;
+  max-width: 80mm;
+  max-height: 20mm;
+  border: 0.75mm solid black;
+  padding: 3mm;
+  margin-bottom: 4mm;
   width: inherit;
+  text-align: center;
+  text-transform: uppercase;
 }
 .name {
   grid-area: name;
   justify-self: center;
-  font-size: 5.4mm;
-  margin: 5mm;
+  font-size: 7mm;
+  width: 80mm;
   margin-bottom: 0;
   font-weight: bold;
   text-transform: uppercase;
+  text-align: center;
 }
 .cpf {
   grid-area: cpf;
   justify-self: center;
-  font-size: 3mm;
+  font-size: 5mm;
   margin: 0 3mm;
   margin-bottom: 4mm;
   font-weight: normal;
@@ -84,7 +96,7 @@ p {
   text-transform: uppercase;
   font-style: italic;
   font-size: 3.02mm;
-  text-align: start;
+  text-align: center;
   padding: 0 8mm;
 }
 .header {
@@ -133,18 +145,18 @@ p {
   content: 'R$';
   font-size: 5mm;
   font-weight: lighter;
-  margin-right: -2mm;
+  margin-right: -1mm;
 }
 .percentual::after {
   content: '%';
   font-size: 5mm;
   font-weight: lighter;
-  margin-left: -2mm;
+  margin-left: -1mm;
 }
 .quantidade::before {
-  content: 'leve ';
+  content: 'LEVE ';
   letter-spacing: 0mm;
-  font-size: 4mm;
+  font-size: 5mm;
   font-weight: lighter;
   margin-left: -2mm;
 }
@@ -200,8 +212,12 @@ hr {
 }
 .header,
 .legal {
-  font-size: 2.8mm;
+  font-size: 3mm;
 }
 .header svg {
   justify-self: center;
+}
+
+.endereco {
+  font-size: 3mm;
 }
