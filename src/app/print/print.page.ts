@@ -102,7 +102,7 @@ export class PrintPage implements OnInit {
         this.name = params['name'];
         this.rede = params['rede'];
 
-        window.print();
+        setTimeout(() => window.print(), 1000);
       } catch (error) {
 
       }
