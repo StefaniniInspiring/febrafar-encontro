@@ -11,6 +11,11 @@ $light: #999;
 
 ion-grid {
   padding: 0;
+  margin: auto;
+  width: 70vw;
+}
+
+ion-row {
   width: 70vw;
 }
 
@@ -18,6 +23,7 @@ ion-grid {
   --background: white;
   margin: 0;
   padding: 2vh;
+  padding-top: 0;
   border-radius: 1.5vh;
   border: .5vh solid white;
   transition: all 0.1s linear;
@@ -77,6 +83,7 @@ h6 {
 
 ion-col {
   padding: 1.5vh;
+  padding-bottom: 0.5vh;
 }
 
 .price {
@@ -98,4 +105,55 @@ ion-col {
 
 strong {
   font-weight: 900;
+}
+
+.print-header {
+	background-color: $tertiary;
+	color: white;
+	padding: 1vh;
+	border-radius: 1vh;
+  position: relative;
+  font-size: 3vh;  
+  width: 72vw;
+
+  span {
+    max-width: 65vw;
+  }
+
+  strong {
+    margin-left: 0.5vh;
+  }
+
+  @media screen and (max-width: 575px) {
+    strong {
+      margin-left: 0.5vh;
+      display: block;
+    }
+  }
+
+	.print-avatar {
+		position: absolute;
+		right: -2vw;
+		top: 0;
+		border-radius: 100%;
+		height: 5vh;
+		width: 5vh;
+		padding: 1vh;
+    border: 0.75vh solid $tertiary;
+    color: $tertiary;
+		z-index: 3;
+		background-color: #f5f5f5;
+	}
+}
+
+.index {
+  font-size: 2.5vh;
+  align-items: center;
+  display: flex;
+}
+
+ion-button {
+  --box-shadow: none;
+  font-size: 2.25vh;
+  height: 4.5vh;
 }
