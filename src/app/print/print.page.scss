@@ -1,0 +1,207 @@
+ion-content {
+  margin: 0;
+}
+span,
+p {
+  font-size: 5mm;
+  font-family: 'Roboto', sans-serif;
+}
+@media print {
+  .hidden-print,
+  .hidden-print * {
+    display: none !important;
+  }
+  .ticket-bg {
+    display: none !important;
+  }
+}
+@media (-webkit-min-device-pixel-ratio:0) {
+  .offer {
+    display: grid;
+    grid-template-columns: 46mm 34mm;
+    align-items: center;
+  }
+
+  .offer .discount {
+    padding-right: 1mm;
+  }
+
+  .offer .discount-label {
+    padding-right: 1mm;
+  }
+}
+@page {
+  size: auto;
+  margin: 0;
+}
+p {
+  margin: 0;
+}
+.ticket-bg {
+  width: 80mm;
+  max-width: 80mm;
+  height: 100vw;
+  position: absolute;
+  z-index: 0;
+  background-color: #fbfca9;
+}
+.ticket {
+  z-index: 10;
+  position: absolute;
+  width: 80mm;
+  max-width: 80mm;
+  display: grid;
+  grid-template-areas: 'logo' 'name' 'cpf' 'slogan' 'header' 'offers' 'footer';
+}
+.logo {
+  grid-area: logo;
+  justify-self: center;
+  max-width: 60mm;
+  max-height: 18mm;
+  width: inherit;
+}
+.name {
+  grid-area: name;
+  justify-self: center;
+  font-size: 5.4mm;
+  margin: 5mm;
+  margin-bottom: 0;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.cpf {
+  grid-area: cpf;
+  justify-self: center;
+  font-size: 3mm;
+  margin: 0 3mm;
+  margin-bottom: 4mm;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+.slogan {
+  grid-area: slogan;
+  justify-self: center;
+  text-transform: uppercase;
+  font-style: italic;
+  font-size: 3.02mm;
+  text-align: start;
+  padding: 0 8mm;
+}
+.header {
+  grid-area: header;
+  height: 12mm;
+  margin: 3mm 0mm;
+  display: grid;
+  grid-template-columns: 20mm 60mm;
+  align-items: center;
+}
+.header-img {
+  grid-area: header;
+  height: 12mm;
+  margin: 3mm 0mm;
+  display: grid;
+  grid-template-columns: 20mm 60mm;
+  align-items: center;
+}
+.header-img img {
+  width: 80mm;
+  max-width: initial !important;
+}
+.offers {
+  grid-area: offers;
+}
+.offer {
+  display: grid;
+  grid-template-columns: 47mm 33mm;
+  align-items: center;
+}
+.offer .product-name {
+  font-size: 5mm;
+  text-transform: capitalize;
+}
+.offer .product-description {
+  font-size: 3.5mm;
+  margin-top: -1mm;
+}
+.offer .discount {
+  font-size: 9mm;
+  letter-spacing: -0.4mm;
+  font-weight: bold;
+  text-align: right;
+}
+.fixed::before {
+  content: 'R$';
+  font-size: 5mm;
+  font-weight: lighter;
+  margin-right: -2mm;
+}
+.percentual::after {
+  content: '%';
+  font-size: 5mm;
+  font-weight: lighter;
+  margin-left: -2mm;
+}
+.quantidade::before {
+  content: 'leve ';
+  letter-spacing: 0mm;
+  font-size: 4mm;
+  font-weight: lighter;
+  margin-left: -2mm;
+}
+.offer .discount-label {
+  font-size: 4mm;
+  margin-top: -2mm;
+  text-align: right;
+}
+.full-price {
+  text-decoration: line-through;
+}
+.footer {
+  grid-area: footer;
+}
+.footer,
+.client {
+  font-size: 5mm;
+  text-transform: uppercase;
+}
+.footer,
+.expiry {
+  font-size: 4mm;
+  font-weight: bold;
+}
+.footer,
+.clerk {
+  font-size: 4mm;
+  font-weight: bold;
+}
+.download {
+  text-align: center;
+  margin-top: 4mm;
+}
+hr {
+  background: black;
+  border: 1px solid black;
+  margin-block-start: 3mm;
+  margin-block-end: 3mm;
+}
+.download img {
+  height: 30mm;
+}
+.download canvas {
+  height: 30mm;
+}
+.header span {
+  color: white;
+}
+.header,
+.warning {
+  font-size: 2.8mm;
+  font-weight: bold;
+}
+.header,
+.legal {
+  font-size: 2.8mm;
+}
+.header svg {
+  justify-self: center;
+}

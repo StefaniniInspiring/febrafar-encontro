@@ -1,0 +1,92 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Impressão
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="background">
+  <ion-grid class="ion-no-padding">
+    <ion-row>
+      <ion-col
+        class="ion-no-padding"
+        size="12"
+        size-sm="6"
+        size-md="4"
+        size-lg="2.4"
+        *ngFor="let product of products">
+        <ion-card
+          [disabled]="disableProduct(product)"
+          (click)="select(product)"
+          button
+          [ngClass]="{ 'selected': product.selected }"
+          class="product-card"
+          mode="ios">
+            <figure class="product-img-container">
+              <img
+                [src]="'../assets/imgs/' + product.id + '.jpg'"
+                [alt]="product.name">
+              <p>
+                {{ product.name }}
+              </p>
+            </figure>
+            <ng-template [ngIf]="product.type == 'desconto_unidade'">
+              <ion-text color="primary">
+                <h3>
+                  Leve <strong>3</strong>
+                </h3>
+              </ion-text>
+              <h6>
+                Pague <strong>0</strong>
+              </h6>
+            </ng-template>
+            <ng-template [ngIf]="product.type == 'desconto'">
+              <ion-text color="primary">
+                <h3>
+                  100%
+                </h3>
+                <h6 class="discount">de desconto</h6>
+              </ion-text>
+            </ng-template>
+            <ng-template [ngIf]="product.type == 'fixed'">
+              <h6 class="price before">
+                2,00
+              </h6>
+              <ion-text color="primary">
+                <h3 class="price after">
+                  0,00
+                </h3>
+              </ion-text>
+            </ng-template>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        {{ totalSelected }} / {{ max }}
+      </ion-col>
+      <ion-col class="ion-text-right">
+        <ion-button>
+          <ion-icon name="print" slot="start"></ion-icon>
+          Imprimir
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<!--
+<ion-footer>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">
+      <small>
+        &copy;
+        <time [dateTime]="hoje.toISOString()" >
+          {{ hoje.getFullYear() }}
+        </time>
+        Stefanini Inspiring
+      </small>
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>
+-->
