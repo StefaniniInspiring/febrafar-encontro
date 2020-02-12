@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-print',
@@ -8,7 +8,9 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PrintPage implements OnInit {
 
-  constructor(private activatedRoute: ActivatedRoute) { }
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private router: Router) { }
 
   ids = [];
   name = '';
@@ -102,11 +104,18 @@ export class PrintPage implements OnInit {
         this.name = params['name'];
         this.rede = params['rede'];
 
-        setTimeout(() => window.print(), 1000);
+        setTimeout(() => {
+          window.print();
+          this.goBack();
+        }, 1000);
       } catch (error) {
 
       }
     });
+  }
+
+  goBack() {
+    this.router.navigate(['/']);
   }
 
 }
