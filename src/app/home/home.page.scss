@@ -1,5 +1,5 @@
 ion-grid ion-row ion-col {
-    height: 92vh;
+    height: 91vh;
 }
 
 .group-text {
@@ -37,20 +37,6 @@ ion-grid ion-row ion-col {
             font-size: 30px;
             color: var(--pec);
         }
-    }
-
-    ion-button {
-        display: block;
-        width: 535px;
-        height: 95px;
-        margin: 40px 0;
-        --background: linear-gradient(90deg, #F9C500 0%, #EFA11A 100%);
-        --background-focused: linear-gradient(90deg, rgba(249, 197, 0, 0.8) 0%, rgba(239, 161, 26, 0.8) 100%);
-        --background-hover: linear-gradient(90deg, rgba(249, 197, 0, 0.8) 0%, rgba(239, 161, 26, 0.8) 100%);
-        --border-radius: 14px;
-        font-weight: 300;
-        font-size: 34px;
-        line-height: 40px;
     }
 }
 
