@@ -8,6 +8,10 @@ const routes: Routes = [
     path: 'print',
     loadChildren: () => import('./print/print.module').then( m => m.PrintPageModule)
   },
+  {
+    path: 'gifts',
+    loadChildren: () => import('./gifts/gifts.module').then( m => m.GiftsPageModule)
+  },
 ];
 
 @NgModule({
