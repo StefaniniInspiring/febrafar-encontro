@@ -107,6 +107,8 @@ ion-row {
     text-align: left;
     font-weight: 900;
     font-size: 3.5vh;
+    margin-top: 3vh;
+    margin-bottom: 1vh;
   }
 
   ion-input {
@@ -127,4 +129,18 @@ ion-row {
 
 .detail {
   z-index: 1;
+}
+
+.back {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 4;
+  font-size: 4vh;
+}
+
+ion-content {
+  position: relative;
 }

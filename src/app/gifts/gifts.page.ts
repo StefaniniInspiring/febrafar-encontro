@@ -132,4 +132,13 @@ export class GiftsPage implements OnInit {
       }
     });
   }
+
+  back() {
+    this.router.navigate(['/info'], {
+      queryParams: {
+        name: this.name,
+        rede: this.rede
+      }
+    });
+  }
 }

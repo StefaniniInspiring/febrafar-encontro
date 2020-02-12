@@ -181,3 +181,21 @@ ion-button {
   --background-activated: var(--gradient-button-ligth);
   --border-radius: 1vh;
 }
+
+.back {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 4;
+  font-size: 4vh;
+  --background: none;
+  --background-activated: none;
+  --background-focused: none;
+  --background-hover: none;
+}
+
+ion-content {
+  position: relative;
+}

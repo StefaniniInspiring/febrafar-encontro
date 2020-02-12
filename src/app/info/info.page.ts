@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-info',
@@ -11,13 +11,26 @@ export class InfoPage implements OnInit {
   name = '';
   rede = '';
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private activatedRoute: ActivatedRoute) {
+    this.activatedRoute.queryParams.subscribe(params => {
+      try {
+        this.name = params['name'];
+        this.rede = params['rede'];
+      } catch (error) {
+        this.name = '';
+        this.rede = '';
+      }
+    });
+  }
 
   ngOnInit() {
   }
 
   get canContinue() {
-    return this.name == '' || this.rede == '';
+    return this.name == undefined || this.rede == undefined ||
+    this.name == '' || this.rede == '';
   }
 
   continue() {
