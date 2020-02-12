@@ -1,9 +1,13 @@
 ion-grid ion-row ion-col {
-    height: 91vh;
+    height: 92vh;
+}
+
+ion-row {
+    overflow: hidden;
 }
 
 .group-text {
-    margin-bottom: 50px;
+    margin-bottom: 6.5vh;
 }
 
 .text {
@@ -11,38 +15,64 @@ ion-grid ion-row ion-col {
     align-items: flex-end;
     text-align: left;
     color: #666666;
+    padding-bottom: 0;
 
     h3 {
         font-weight: 900;
-        font-size: 60px;
-        line-height: 70px;
+        font-size: 9vh;
+        line-height: 10vh;
         text-transform: uppercase;
     }
 
     span {
         font-style: normal;
         font-weight: 300;
-        font-size: 30px;
-        line-height: 50px;
+        font-size: 4.5vh;
+        line-height: 7vh;
 
         strong {
             font-style: normal;
             font-weight: 900;
-            font-size: 30px;
-            line-height: 50px;
         }
 
         small {
             font-weight: 900;
-            font-size: 30px;
             color: var(--pec);
+            font-size: 4.5vh;
         }
     }
 }
 
-img {
+.azul {
     position: absolute;
-    bottom: 0;
-    width: 600px;
-    max-width: 600px;
+    bottom: 15vh;
+    left: -22vw;
+}
+
+.azul img {
+    width: auto;
+    height: 55vh;
+}
+
+.verde {
+    position: absolute;
+    bottom: -1vh;
+    left: -20vw;
+    
+}
+
+.verde img {
+    height: 86vh;
+    max-width: 70vw;    
+}
+
+.amarelo {
+    position: absolute;
+    bottom: -1vh;
+    left: -2vw;
+}
+
+.amarelo img {
+    width: auto;
+    height: 40vh;
 }
