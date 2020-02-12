@@ -10,9 +10,4 @@ export class HomePage {
 
   constructor(private router: Router) {}
 
-  goToInfo() {
-    console.log('aaa');
-    this.router.navigate(['../info']);
-  }
-
 }
