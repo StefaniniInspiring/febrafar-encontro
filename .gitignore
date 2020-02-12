@@ -49,10 +49,6 @@ src/assets/instance/
 www/
 src/service-worker.js
 opt/shell-app/
-./src/environments/environment.prod.ts
-./src/environments/environment.ts
-src/environments/environment.prod.ts
-src/environments/environment.ts
 src/app/components/footer/footer.component.ts
 .firebase
 

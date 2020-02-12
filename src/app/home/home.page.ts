@@ -8,6 +8,11 @@ import { Router } from '@angular/router';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(private router: Router) {}
+
+  goToInfo() {
+    console.log('aaa');
+    this.router.navigate(['../info']);
+  }
 
 }

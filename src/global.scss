@@ -60,3 +60,18 @@ $light: #999;
     font-size: 5vh;
     line-height: 5.5vh;
 }
+
+ion-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1vh 4vh 0vh 4vh;
+
+  .inspiring {
+      height: 7vh;
+  }
+
+  .febrafar {
+      height: 4.6vh;
+  }
+}

@@ -5,6 +5,10 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)},
   {
+    path: 'info',
+    loadChildren: () => import('./info/info.module').then( m => m.InfoPageModule)
+  },
+  {
     path: 'print',
     loadChildren: () => import('./print/print.module').then( m => m.PrintPageModule)
   },
@@ -12,6 +16,7 @@ const routes: Routes = [
     path: 'gifts',
     loadChildren: () => import('./gifts/gifts.module').then( m => m.GiftsPageModule)
   },
+  { path: '**', redirectTo: 'home', pathMatch: 'full' },
 ];
 
 @NgModule({
