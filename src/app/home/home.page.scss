@@ -82,8 +82,26 @@ h6 {
 }
 
 ion-col {
+  position: relative;
   padding: 1.5vh;
   padding-bottom: 0.5vh;
+}
+
+.sticker-right {
+  position: absolute;
+  right: 0.6vw;
+  top: 0.6vh;
+  width: 5vh;
+  height: auto;
+  z-index: 1;
+  color: var(--ion-color-danger);
+  fill: var(--ion-color-danger);
+  opacity: 1;
+  transition: opacity 0.1s linear;
+
+  &.disabled {
+    opacity: 0.5;
+  }
 }
 
 .price {

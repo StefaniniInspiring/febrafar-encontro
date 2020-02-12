@@ -4,9 +4,6 @@
 	--ion-default-font: 'Roboto', arial !important;
 }
 
-ion-content {
-  margin: 0;
-}
 span,
 p {
   font-size: 5mm;
@@ -47,6 +44,7 @@ p {
   width: 80mm;
   max-width: 80mm;
   height: 100vw;
+  overflow: hidden;
   position: absolute;
   z-index: 0;
   background-color: #fbfca9;
@@ -57,7 +55,7 @@ p {
   width: 80mm;
   max-width: 80mm;
   display: grid;
-  grid-template-areas: 'name' 'cpf' 'logo' 'slogan' 'header' 'offers' 'footer';
+  grid-template-areas: 'name' 'cpf' 'logo' 'slogan' 'header' 'offers' 'endereco' 'logos' 'footer' 'download';
 }
 .logo {
   grid-area: logo;
@@ -71,11 +69,30 @@ p {
   text-align: center;
   text-transform: uppercase;
 }
+.logos {
+  grid-area: logos;
+  justify-self: center;
+  max-width: 80mm;
+  max-height: 20mm;
+  margin-top: 8mm;
+  width: inherit;
+  grid-template-columns: 50mm 30mm;
+  display: grid;
+}
+.febrafar {
+  text-align: left;
+  width: 30mm;
+}
+.inspiring {
+  text-align: right;
+  width: 30mm;
+}
 .name {
   grid-area: name;
   justify-self: center;
   font-size: 7mm;
   width: 80mm;
+  padding-top: 5mm;
   margin-bottom: 0;
   font-weight: bold;
   text-transform: uppercase;
@@ -145,7 +162,7 @@ p {
   content: 'R$';
   font-size: 5mm;
   font-weight: lighter;
-  margin-right: -1mm;
+  margin-right: 0mm;
 }
 .percentual::after {
   content: '%';
@@ -174,19 +191,20 @@ p {
 .footer,
 .client {
   font-size: 5mm;
-  text-transform: uppercase;
+  //text-transform: uppercase;
 }
 .footer,
 .expiry {
   font-size: 4mm;
-  font-weight: bold;
+  //font-weight: bold;
 }
 .footer,
 .clerk {
   font-size: 4mm;
-  font-weight: bold;
+  //font-weight: bold;
 }
 .download {
+  grid-area: download;
   text-align: center;
   margin-top: 4mm;
 }
@@ -219,5 +237,6 @@ hr {
 }
 
 .endereco {
+  grid-area: endereco;
   font-size: 3mm;
 }

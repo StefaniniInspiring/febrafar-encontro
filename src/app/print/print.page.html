@@ -1,4 +1,4 @@
-<ion-content>
+<div class="print-content">
   <div class="ticket-bg"></div>
   <div class="ticket">
     <p class="name">
@@ -8,7 +8,7 @@
       {{ rede }}
     </p>
     <div class="logo">
-      Seja bem-vindo à<br>
+      Seja bem-vindo à<br />
       assembleia Febrafar
     </div>
     <span class="slogan">
@@ -24,16 +24,13 @@
             <p class="product-name">
               {{ products[i].name }}
             </p>
-            <p class="product-description">
-            </p>
+            <p class="product-description"></p>
           </div>
           <span *ngIf="products[i].type == 'fixed'">
             <p class="discount-label full-price">
               R$ 2,00
             </p>
-            <p class="discount fixed">
-              0<span>,00</span>
-            </p>
+            <p class="discount fixed">0<span>,00</span></p>
           </span>
 
           <span *ngIf="products[i].type == 'desconto'">
@@ -56,58 +53,65 @@
         </div>
         <hr *ngIf="!last" />
       </ng-template>
-    <div class="header-img">
-      <img src="../../assets/imgs/suggestion-offers-header.svg" />
-    </div>
-    <div class="offers">
-      <div class="offer">
-        <div>
-          <p class="product-name">
-            Jantar Especial de Boas-Vindas Germed
-          </p>
-          <p class="product-description">
-          </p>
-        </div>
-        <span>
-          <p class="discount">
-            19h
-          </p>
-          <p class="discount-label">
-            17/02
-          </p>
-        </span>
+      <div class="header-img">
+        <img src="../../assets/imgs/suggestion-offers-header.svg" />
+      </div>
+      <div class="offers">
+        <div class="offer">
+          <div>
+            <p class="product-name">
+              Jantar Especial de Boas-Vindas Germed
+            </p>
+            <p class="product-description"></p>
+          </div>
+          <span>
+            <p class="discount">
+              19h
+            </p>
+            <p class="discount-label">
+              17/02
+            </p>
+          </span>
         </div>
         <hr />
+      </div>
+      <p class="endereco">
+        Museu do Futebol - Estádio do Pacaembu
+        <br />
+        Praça Charles Miler, s/n - Pacaembu, São Paulo
+      </p>
+      <div class="logos">
+        <div class="febrafar">
+          <img src="../../assets/imgs/febrafar.svg" />
+        </div>
+        <div class="inspiring">
+          <img src="../../assets/imgs/inspiring.svg" />
+        </div>
+      </div>
+      <hr />
     </div>
-    <p class="endereco">
-      Museu do Futebol - Estádio do Pacaembu
+    <div class="footer">
+      <p class="legal">
+        Você tem em suas mãos uma amostra da nova funcionalidade do App do PEC:
+        Impressão de Cupom de Desconto. Saiba Como ter este importante
+        diferencial competitivo em sua rede para conquistar mais clientes e
+        alavancar vendas.
+        <b>
+          Entre em contato com nosso Departamento de Capacitação:
+        </b>
+        <br /><br />
+      </p>
+      <p class="legal">
+        <b>
+          email:
+        </b>
+        capacitacao@febrafar.com.br
+      </p>
+    </div>
+    <div class="download">
+      <img src="../../assets/imgs/qr-code.svg" alt="whatsapp: 11 97107-8924">
       <br>
-      Praça Charles Miler, s/n - Pacaembu, São Paulo
-    </p>
-    <hr>
-  </div>
-  <div class="foofer">
-    <p class="legal">
-      Você tem em suas mãos uma amostra da nova funcionalidade do App do PEC:
-      Impressão de Cupom de Desconto. Saiba Como ter este importante diferencial
-      competitivo em sua rede para conquistar mais clientes e alavancar vendas.
-      <b>
-        Entre em contato com nosso Departamento de Capacitação:
-      </b>
-      <br /><br />
-    </p>
-    <p class="legal">
-      <b>
-        email:
-      </b>
-      capacitacao@febrafar.com.br
-    </p>
-    <p class="legal">
-      <b>
-        whatsapp:
-      </b>
-      11 98765-4321
-    </p>
+      <small>(11) 97107-8924</small>
+    </div>
   </div>
 </div>
-</ion-content>
