@@ -13,8 +13,8 @@
 @import "~@ionic/angular/css/core.css";
 
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,900&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Raleway:400,500,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,600,700,800,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900&display=swap');
 
 /* Basic CSS for apps built with Ionic */
 @import "~@ionic/angular/css/normalize.css";
@@ -52,9 +52,10 @@ $light: #999;
     width: 75vh;
     height: 13vh;
     margin: 5vh 0;
-    --background: linear-gradient(90deg, #F9C500 0%, #EFA11A 100%);
-    --background-focused: linear-gradient(90deg, rgba(249, 197, 0, 0.8) 0%, rgba(239, 161, 26, 0.8) 100%);
-    --background-hover: linear-gradient(90deg, rgba(249, 197, 0, 0.8) 0%, rgba(239, 161, 26, 0.8) 100%);
+    --background: var(--gradient-button);
+    --background-focused: var(--gradient-button-ligth);
+    --background-hover: var(--gradient-button-ligth);
+    --background-activated: var(--gradient-button-ligth);
     --border-radius: 1.5vh;
     font-weight: 300;
     font-size: 5vh;
@@ -66,6 +67,7 @@ ion-header {
   align-items: center;
   justify-content: space-between;
   padding: 1vh 4vh 0vh 4vh;
+  background-color: whitesmoke;
 
   .inspiring {
       height: 7vh;

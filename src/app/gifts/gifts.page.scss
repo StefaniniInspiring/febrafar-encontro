@@ -24,6 +24,7 @@ ion-row {
   margin: 0;
   padding: 2vh;
   padding-top: 0;
+  padding-bottom: 1.7vh;
   border-radius: 1.5vh;
   border: .5vh solid white;
   transition: all 0.1s linear;
@@ -53,8 +54,8 @@ ion-row {
       color: $medium;
       font-weight: 500;
       text-align: center;
-      margin-top: 2vh;
-      margin-bottom: 1vh;
+      margin-top: 0.5vh;
+      margin-bottom: 0.5vh;
       font-size: 2.25vh;
       text-align: center;
       overflow: hidden;
@@ -65,7 +66,7 @@ ion-row {
 }
 
 h3 {
-  font-weight: 500;
+  font-weight: 700;
   text-transform: uppercase;
   text-align: center;
   font-size: 3.5vh;
@@ -89,8 +90,8 @@ ion-col {
 
 .sticker-right {
   position: absolute;
-  right: 0.6vw;
-  top: 0.6vh;
+  right: 0vw;
+  top: 0vh;
   width: 5vh;
   height: auto;
   z-index: 1;
@@ -131,7 +132,7 @@ strong {
 	padding: 1vh;
 	border-radius: 1vh;
   position: relative;
-  font-size: 3vh;  
+  font-size: 2.5vh;  
   width: 72vw;
 
   span {
@@ -171,7 +172,12 @@ strong {
 }
 
 ion-button {
-  --box-shadow: none;
   font-size: 2.25vh;
   height: 4.5vh;
+  text-transform: uppercase;
+  --box-shadow: none;  
+  --background: var(--gradient-button);
+  --background-hover: var(--gradient-button-ligth);
+  --background-activated: var(--gradient-button-ligth);
+  --border-radius: 1vh;
 }

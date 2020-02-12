@@ -1,14 +1,21 @@
+<ion-header no-border>
+  <div class="inspiring">
+    <img src="../../assets/imgs/logo_inspiring.svg" />
+  </div>
+  <div class="febrafar">
+    <img src="../../assets/imgs/logo_pec.svg" />
+    <img src="../../assets/imgs/logo_febrafar.svg" />
+  </div>
+</ion-header>
+
 <ion-content color="background">
   <ion-grid class="ion-no-padding">
     <ion-row class="print-header">
       <span>
         Clique nos brindes que deseja imprimir e depois em
         <strong>IMPRIMIR BRINDES</strong>
-      </span>      
-      <ion-icon
-        class="print-avatar"
-        name="print"
-      ></ion-icon>
+      </span>
+      <ion-icon class="print-avatar" name="print"></ion-icon>
     </ion-row>
     <ion-row>
       <ion-col
@@ -80,7 +87,7 @@
         {{ totalSelected }} / {{ max }}
       </ion-col>
       <ion-col class="ion-text-right">
-        <ion-button [disabled]="total == 0" (click)="print()">
+        <ion-button [disabled]="totalSelected == 0" (click)="print()">
           <ion-icon name="print" slot="start"></ion-icon>
           Imprimir Brindes
         </ion-button>
