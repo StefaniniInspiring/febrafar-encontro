@@ -11,28 +11,33 @@
 <ion-content>
   <ion-grid class="ion-no-padding">
     <ion-row class="ion-no-padding">
-      <ion-col size="5" class="ion-no-padding">
-        <div class="verde">
-          <img src="./../assets/imgs/elemento_verde.png" />
+      <ion-col size="5" class="ion-no-padding column">
+        <div class="form">
+          <h3>Qual o seu nome?</h3>
+          <ion-input placeholder="Nome do convidado(a)"></ion-input>
+  
+          <h3>E sua REDE?</h3>
+          <ion-input placeholder="Nome da rede"></ion-input>
+
+          <ion-button mode="md" routerLink="/info" class="primario">
+            <ion-icon name="arrow-forward" slot="end"></ion-icon>
+            Continuar
+          </ion-button>
         </div>
-        <div class="amarelo">
-          <img src="./../assets/imgs/elemento_amarelo.png" />
-        </div>
-        <div class="azul">
-          <img src="./../assets/imgs/elemento_azul.png" />
+        <div class="detail">
+          <div class="verde">
+            <img src="./../assets/imgs/elemento_verde.png" />
+          </div>
+          <div class="amarelo">
+            <img src="./../assets/imgs/elemento_amarelo.png" />
+          </div>
+          <div class="azul">
+            <img src="./../assets/imgs/elemento_azul.png" />
+          </div>
         </div>
       </ion-col>
       <ion-col size="7" class="text">
-        <div class="group-text">
-          <h3>Bem-vindo</h3>
-          <span>
-            Imprima aqui seu <strong>cupom de desconto</strong> e confira <br />
-            a mais nova funcionalidade do <small>Aplicativo PEC</small>
-          </span>
-          <ion-button class="primario">
-            Começar
-          </ion-button>
-        </div>
+        <img src="./../assets/imgs/cracha.svg" />
       </ion-col>
     </ion-row>
   </ion-grid>

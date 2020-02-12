@@ -12,10 +12,12 @@ ion-row {
 
 .text {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
+  justify-content: center;
   text-align: left;
   color: #666666;
   padding-bottom: 0;
+  position: relative;
 
   h3 {
       font-weight: 900;
@@ -40,6 +42,12 @@ ion-row {
           color: var(--pec);
           font-size: 4.5vh;
       }
+  }
+
+  img {
+    position: absolute;
+    bottom: -22vh;
+    height: 125vh;
   }
 }
 
@@ -75,4 +83,48 @@ ion-row {
 .amarelo img {
   width: auto;
   height: 40vh;
+}
+
+.column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 85%;
+  padding: 0 5vw;
+
+  h3 {
+    width: 100%;
+    color: white;
+    text-align: left;
+    font-weight: 700;
+    font-size: 3.5vh;
+  }
+
+  ion-input {
+    --background: white;
+    border-radius: 1vh;
+    border: 0.1vh solid #666;
+    --padding-start: 2vh;
+    --padding-end: 2vh;
+    --padding-top: 2vh;
+    --padding-bottom: 2vh;
+    font-size: 3vh;
+  }
+
+  .primario {
+    width: 100%;
+  }
+}
+
+.detail {
+  z-index: 1;
 }
