@@ -10,7 +10,17 @@ export class PrintPage implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private router: Router) { }
+    private router: Router) {
+      this.activatedRoute.queryParams.subscribe(params => {
+        try {
+          this.ids = JSON.parse(params['indexes']);
+          this.name = params['name'];
+          this.rede = params['rede'];
+        } catch (error) {
+  
+        }
+      });
+    }
 
   ids = [];
   name = '';
@@ -98,20 +108,10 @@ export class PrintPage implements OnInit {
   }
 
   ionViewDidEnter() {
-    this.activatedRoute.queryParams.subscribe(params => {
-      try {
-        this.ids = JSON.parse(params['indexes']);
-        this.name = params['name'];
-        this.rede = params['rede'];
-
-        setTimeout(() => {
-          window.print();
-          this.goBack();
-        }, 1000);
-      } catch (error) {
-
-      }
-    });
+    setTimeout(() => {
+      window.print();
+      this.goBack();
+    }, 1000);
   }
 
   goBack() {

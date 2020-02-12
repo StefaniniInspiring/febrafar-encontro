@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-gifts',
@@ -7,7 +7,22 @@ import { Router } from '@angular/router';
   styleUrls: ['./gifts.page.scss']
 })
 export class GiftsPage implements OnInit {
-  constructor(private router: Router) {}
+
+  name = '';
+  rede = '';
+
+  constructor(
+    private router: Router,
+    private activatedRoute: ActivatedRoute) {
+      this.activatedRoute.queryParams.subscribe(params => {
+        try {
+          this.name = params['name'];
+          this.rede = params['rede'];
+        } catch (error) {
+  
+        }
+      });
+    }
 
   max = 3;
   hoje = new Date();
@@ -81,7 +96,7 @@ export class GiftsPage implements OnInit {
   ];
 
   ngOnInit() {}
-
+  
   select(product) {
     product.selected = !product.selected;
   }
@@ -112,8 +127,8 @@ export class GiftsPage implements OnInit {
     this.router.navigate(['/print'], {
       queryParams: {
         indexes: JSON.stringify(indexArray),
-        name: 'Gabriel',
-        rede: 'Entrefarma'
+        name: this.name,
+        rede: this.rede
       }
     });
   }

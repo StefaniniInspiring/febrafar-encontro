@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-info',
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InfoPage implements OnInit {
 
-  constructor() { }
+  name = '';
+  rede = '';
+
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  get canContinue() {
+    return this.name == '' || this.rede == '';
+  }
+
+  continue() {
+    this.router.navigate(['../gifts'], {
+      queryParams: {
+        name: this.name,
+        rede: this.rede
+      }
+    });
   }
 
 }
