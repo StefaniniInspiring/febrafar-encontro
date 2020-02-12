@@ -1,0 +1,62 @@
+ion-grid ion-row ion-col {
+    height: 92vh;
+}
+
+.group-text {
+    margin-bottom: 50px;
+}
+
+.text {
+    display: flex;
+    align-items: flex-end;
+    text-align: left;
+    color: #666666;
+
+    h3 {
+        font-weight: 900;
+        font-size: 60px;
+        line-height: 70px;
+        text-transform: uppercase;
+    }
+
+    span {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 30px;
+        line-height: 50px;
+
+        strong {
+            font-style: normal;
+            font-weight: 900;
+            font-size: 30px;
+            line-height: 50px;
+        }
+
+        small {
+            font-weight: 900;
+            font-size: 30px;
+            color: var(--pec);
+        }
+    }
+
+    ion-button {
+        display: block;
+        width: 535px;
+        height: 95px;
+        margin: 40px 0;
+        --background: linear-gradient(90deg, #F9C500 0%, #EFA11A 100%);
+        --background-focused: linear-gradient(90deg, rgba(249, 197, 0, 0.8) 0%, rgba(239, 161, 26, 0.8) 100%);
+        --background-hover: linear-gradient(90deg, rgba(249, 197, 0, 0.8) 0%, rgba(239, 161, 26, 0.8) 100%);
+        --border-radius: 14px;
+        font-weight: 300;
+        font-size: 34px;
+        line-height: 40px;
+    }
+}
+
+img {
+    position: absolute;
+    bottom: 0;
+    width: 600px;
+    max-width: 600px;
+}
