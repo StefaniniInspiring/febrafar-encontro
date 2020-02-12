@@ -14,11 +14,8 @@
       <span>
         Clique nos brindes que deseja imprimir e depois em
         <strong>IMPRIMIR BRINDES</strong>
-      </span>      
-      <ion-icon
-        class="print-avatar"
-        name="print"
-      ></ion-icon>
+      </span>
+      <ion-icon class="print-avatar" name="print"></ion-icon>
     </ion-row>
     <ion-row>
       <ion-col
@@ -90,7 +87,7 @@
         {{ totalSelected }} / {{ max }}
       </ion-col>
       <ion-col class="ion-text-right">
-        <ion-button [disabled]="total == 0" (click)="print()">
+        <ion-button [disabled]="totalSelected == 0" (click)="print()">
           <ion-icon name="print" slot="start"></ion-icon>
           Imprimir Brindes
         </ion-button>
