@@ -29,6 +29,13 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
+@media print {
+  html, body {
+    width: 80mm;
+  }
+  app-root > * { display: none; }
+  app-root app-print { display: block; }
+}
 
 $primary: #4ab848;
 $secondary: #ffc600;

@@ -43,8 +43,8 @@ p {
 .ticket-bg {
   width: 80mm;
   max-width: 80mm;
-  height: 100vw;
-  overflow: hidden;
+  min-height: 100vw;
+  //overflow: hidden;
   position: absolute;
   z-index: 0;
   background-color: #fbfca9;
@@ -114,7 +114,7 @@ p {
   font-style: italic;
   font-size: 3.02mm;
   text-align: center;
-  padding: 0 8mm;
+  padding: 0 13mm;
 }
 .header {
   grid-area: header;
@@ -184,6 +184,8 @@ p {
 }
 .full-price {
   text-decoration: line-through;
+  margin-top: 0 !important;
+  margin-bottom: -1mm;
 }
 .footer {
   grid-area: footer;
