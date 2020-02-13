@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
-import Fuse from 'fuse.js';
+import * as Fuse from 'fuse.js';
 
 @Component({
   selector: 'app-info',
@@ -72,7 +72,7 @@ export class InfoPage implements OnInit {
     { name: 'União Farma' },
     { name: 'Unifarma' },
     { name: 'Vida Farmácias' },
-    { name: 'Drogarias Viva mais' }
+    { name: 'Drogarias Viva Mais' }
   ];
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {
