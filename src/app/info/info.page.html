@@ -26,7 +26,8 @@
               (ionInput)="verifyName($event)"
               required
               [(ngModel)]="name"
-              placeholder="Nome do convidado(a)">
+              placeholder="Nome do convidado(a)"
+              clear-input>
             </ion-input>
             <small
               [ngClass]="{ 'show': errorName, 'hide': !errorName }"
@@ -40,6 +41,7 @@
             <ion-input
               (ionInput)="verifyRede($event)"
               required
+              clear-input
               [(ngModel)]="rede"
               placeholder="Nome da rede">
             </ion-input>
@@ -81,7 +83,7 @@
           (load)="isErrorImg(false)"
           [src]="'./../assets/logos/logos_REDES-' +  redeIndex + '.svg'"
           [alt]="rede">
-        <h4 [hidden]="!errorImg || rede == undefined || rede == ''">
+        <h4 [hidden]="!errorImg || rede == undefined || rede == '' || rede?.length <= 4">
           {{ rede }}
         </h4>
       </ion-col>
