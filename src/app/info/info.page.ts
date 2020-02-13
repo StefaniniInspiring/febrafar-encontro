@@ -37,6 +37,14 @@ export class InfoPage implements OnInit {
   }
 
   continue() {
+
+    if (!this.canContinue) {
+      this.errorName = this.name == undefined || this.name.length == 0;
+      this.errorRede = this.rede == undefined || this.rede.length == 0;
+
+      return;
+    }
+
     this.router.navigate(['../gifts'], {
       queryParams: {
         name: this.name,
