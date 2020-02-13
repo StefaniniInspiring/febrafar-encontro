@@ -30,6 +30,11 @@ ion-row {
     bottom: 20vh;
     position: absolute;
     margin: 0;
+
+    width: 50vh;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
   }
 
   h4 {
