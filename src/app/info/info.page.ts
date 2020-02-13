@@ -13,7 +13,10 @@ export class InfoPage implements OnInit {
   rede = '';
   errorName = false;
   errorRede = false;
+  errorTyping = false;
   errorImg = true;
+  found_item = "";
+  rede_selected = "";
 
   redes: any[] = [
     { name: 'Asfar' },
@@ -124,7 +127,8 @@ export class InfoPage implements OnInit {
   verifyRede(ev) {
     let value = ev.srcElement.value;
     
-    if (value.length > 4) {      
+    if (value.length > 3) {
+      this.errorTyping = false;       
       const options = {
         caseSensitive: false,
         keys: ['name'],
@@ -134,10 +138,14 @@ export class InfoPage implements OnInit {
       this.errorRede = value == '';
       let fuse = new Fuse(this.redes, options);
       const found = fuse.search(value);
-      if (found.length > 0) {
-        const resp = found[0];    
-        this.rede = resp.item.name;    
+      if (found.length > 0) {   
+        this.found_item = found[0];   
+      } else {
+        this.found_item = "";
       }
+    } else {
+      this.errorTyping = value.length > 0;
+      this.found_item = "";
     }
   }
 
@@ -147,5 +155,11 @@ export class InfoPage implements OnInit {
 
   isErrorImg(error) {
     this.errorImg = error;
+  }
+
+  select(rede) {
+    this.rede = rede;
+    this.rede_selected = rede;
+    this.found_item = "";
   }
 }

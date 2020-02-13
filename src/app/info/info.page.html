@@ -36,20 +36,26 @@
             </small>
           </div>
   
-          <h3>E sua REDE?</h3>
-          <div class="input-wrapper">
+          <h3>E sua rede?</h3>
+          <div class="input-wrapper" style="height: 17vh;">
             <ion-input
               (ionInput)="verifyRede($event)"
               required
               clear-input
-              [(ngModel)]="rede"
+              [(ngModel)]="rede_selected"
               placeholder="Nome da rede">
             </ion-input>
             <small
-              [ngClass]="{ 'show': errorRede, 'hide': !errorRede }"
+              [ngClass]="{ 'show2': errorRede || errorTyping, 'hide': !errorRede && !errorTyping }"
               class="error">
-              Informe a sua rede
+              {{ errorTyping ? 'Continue digitando...' : errorRede ? 'Informe a sua rede' : ''}}
             </small>
+            <div class="found-list" *ngIf="found_item !== ''">
+              <div class="item-found"
+                   (click)="select(found_item.item.name)">
+                {{ found_item.item.name }}
+              </div>
+            </div>
           </div>
 
           <ion-button
@@ -83,7 +89,7 @@
           (load)="isErrorImg(false)"
           [src]="'./../assets/logos/logos_REDES-' +  redeIndex + '.svg'"
           [alt]="rede">
-        <h4 class="up-rede" [hidden]="!errorImg || rede == undefined || rede == '' || rede?.length <= 4">
+        <h4 class="up-rede" [hidden]="!errorImg || rede == undefined || rede == ''">
           {{ rede }}
         </h4>
       </ion-col>

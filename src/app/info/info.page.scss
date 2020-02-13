@@ -153,6 +153,7 @@ ion-row {
 
   .primario {
     width: 100%;
+    margin-top: 2vh;
   }
 }
 
@@ -194,6 +195,10 @@ ion-content {
     animation: show 0.1s linear forwards;
   }
 
+  &.show2 {
+    animation: show2 0.1s linear forwards;
+  }
+
   &.hide {
     opacity: 1;
     bottom: -3vh;
@@ -204,11 +209,22 @@ ion-content {
 @keyframes show {
   from {
     opacity: 0;
-    bottom: 0;
+    bottom: 0vh;
   }
   to {
     opacity: 1;
     bottom: -3vh;
+  }
+}
+
+@keyframes show2 {
+  from {
+    opacity: 0;
+    bottom: 7vh;
+  }
+  to {
+    opacity: 1;
+    bottom: 5vh;
   }
 }
 
@@ -247,4 +263,37 @@ ion-content {
     transform: translateY(0vh);
   }
 }
+
+.found-list {
+    background-color: white;
+    border-radius: 1vh;
+    padding: 2vh;
+    margin-top: 1vh;
+    animation: drop_lst 0.2s forwards;
+
+  .item-found {
+    font-size: 3vh;
+    cursor: pointer;
+    font-weight: 700;
+    text-decoration: underline;
+    transition: all 0.1s linear;
+  }
+
+  .item-found:hover {
+    color: #b7b7b7;
+  }
+}
+
+@keyframes drop_lst {
+  0% {
+    opacity: 0;
+    transform: translateY(-1vh);
+  }
+  100% {
+    transform: translateY(0vh);
+  }
+}
+
+
+
 
