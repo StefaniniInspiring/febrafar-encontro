@@ -74,16 +74,16 @@
         </div>
       </ion-col>
       <ion-col size="7" class="text">
-        <img class="background" src="./../assets/imgs/cracha.svg" />
-        <h3>{{ name }}</h3>
+        <img class="background cracha" src="./../assets/imgs/cracha.svg" />
+        <h3 class="up-name">{{ name }}</h3>
         <img
-          class="rede"
+          class="rede up-rede"
           [hidden]="errorImg"
           (error)="isErrorImg(true)"
           (load)="isErrorImg(false)"
           [src]="'./../assets/logos/logos_REDES-' +  redeIndex + '.svg'"
           [alt]="rede">
-        <h4 [hidden]="!errorImg || rede == undefined || rede == '' || rede?.length <= 4">
+        <h4 class="up-rede" [hidden]="!errorImg || rede == undefined || rede == '' || rede?.length <= 4">
           {{ rede }}
         </h4>
       </ion-col>

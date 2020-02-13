@@ -222,3 +222,29 @@ ion-content {
     bottom: 0;
   }
 }
+
+.cracha {
+  animation: up ease 1s forwards;
+}
+
+.up-rede {
+  animation: up ease 1s forwards;
+}
+
+.up-name {
+  animation: up ease 1s forwards;
+}
+
+@keyframes up {
+  0% {
+    opacity: 0;
+    transform: translateY(92vh);
+  }
+  70% {
+    transform: translateY(0vh);
+  }
+  100% {
+    transform: translateY(0vh);
+  }
+}
+
