@@ -21,19 +21,37 @@
       <ion-col size="5" class="ion-no-padding column">
         <div class="form">
           <h3>Qual o seu nome?</h3>
-          <ion-input
-            [(ngModel)]="name"
-            placeholder="Nome do convidado(a)">
-          </ion-input>
+          <div class="input-wrapper">
+            <ion-input
+              (ionInput)="verifyName($event)"
+              required
+              [(ngModel)]="name"
+              placeholder="Nome do convidado(a)">
+            </ion-input>
+            <small
+              [ngClass]="{ 'show': errorName, 'hide': !errorName }"
+              class="error">
+              Informe seu primeiro nome
+            </small>
+          </div>
   
           <h3>E sua REDE?</h3>
-          <ion-input
-            [(ngModel)]="rede"
-            placeholder="Nome da rede">
-          </ion-input>
+          <div class="input-wrapper">
+            <ion-input
+              (ionInput)="verifyRede($event)"
+              required
+              [(ngModel)]="rede"
+              placeholder="Nome da rede">
+            </ion-input>
+            <small
+              [ngClass]="{ 'show': errorRede, 'hide': !errorRede }"
+              class="error">
+              Continue digitando...
+            </small>
+          </div>
 
           <ion-button
-            [disabled]="canContinue"
+            [disabled]="!canContinue"
             (click)="continue()"
             mode="md"
             routerLink="/info"

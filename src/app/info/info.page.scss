@@ -114,12 +114,13 @@ ion-row {
   ion-input {
     --background: white;
     border-radius: 1vh;
-    border: 0.1vh solid #666;
+    border: 0.35vh solid #666;
     --padding-start: 2vh;
     --padding-end: 2vh;
     --padding-top: 2vh;
     --padding-bottom: 2vh;
     font-size: 3vh;
+    z-index: 2;
   }
 
   .primario {
@@ -143,4 +144,53 @@ ion-row {
 
 ion-content {
   position: relative;
+}
+
+.input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.error {
+  opacity: 0;
+  font-size: 2vh;
+  font-weight: 700;
+  z-index: 1;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: var(--ion-color-danger);
+  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+
+  &.show {
+    animation: show 0.1s linear forwards;
+  }
+
+  &.hide {
+    opacity: 1;
+    bottom: -3vh;
+    animation: hide 0.1s linear forwards;
+  }
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+    bottom: 0;
+  }
+  to {
+    opacity: 1;
+    bottom: -3vh;
+  }
+}
+
+@keyframes hide {
+  from {
+    opacity: 1;
+    bottom: -3vh;
+  }
+  to {
+    opacity: 0;
+    bottom: 0;
+  }
 }

@@ -10,6 +10,8 @@ export class InfoPage implements OnInit {
 
   name = '';
   rede = '';
+  errorName = false;
+  errorRede = false;
 
   constructor(
     private router: Router,
@@ -29,8 +31,9 @@ export class InfoPage implements OnInit {
   }
 
   get canContinue() {
-    return this.name == undefined || this.rede == undefined ||
-    this.name == '' || this.rede == '';
+    return !this.errorName && !this.errorRede &&
+      this.name != undefined && this.rede != undefined &&
+      this.name.length > 1 && this.rede.length > 1;
   }
 
   continue() {
@@ -40,6 +43,16 @@ export class InfoPage implements OnInit {
         rede: this.rede
       }
     });
+  }
+
+  verifyName(ev) {
+    let value = ev.srcElement.value;
+    this.errorName = value == '';
+  }
+
+  verifyRede(ev) {
+    let value = ev.srcElement.value;
+    this.errorRede = value == '';
   }
 
 }
