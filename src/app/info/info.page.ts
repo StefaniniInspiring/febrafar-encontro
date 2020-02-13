@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import * as Fuse from 'fuse.js';
@@ -103,6 +103,13 @@ export class InfoPage implements OnInit {
     );
   }
 
+  @HostListener('document:keypress', ['$event'])
+  goNext(event: KeyboardEvent) {
+    if (event.keyCode == 13) {
+      this.continue();
+    }
+  }
+
   continue() {
     if (!this.canContinue) {
       this.errorName = this.name == undefined || this.name.length == 0;
@@ -111,7 +118,7 @@ export class InfoPage implements OnInit {
       return;
     }
 
-    this.router.navigate(['../gifts'], {
+    this.router.navigate(['gifts'], {
       queryParams: {
         name: this.name,
         rede: this.rede

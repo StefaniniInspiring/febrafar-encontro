@@ -10,31 +10,32 @@
  */
 
 /* Core CSS required for Ionic components to work properly */
-@import "~@ionic/angular/css/core.css";
-
-/* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,600,700,800,900&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900&display=swap');
+@import '~@ionic/angular/css/core.css';
 
 /* Basic CSS for apps built with Ionic */
-@import "~@ionic/angular/css/normalize.css";
-@import "~@ionic/angular/css/structure.css";
-@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/normalize.css';
+@import '~@ionic/angular/css/structure.css';
+@import '~@ionic/angular/css/typography.css';
 @import '~@ionic/angular/css/display.css';
 
 /* Optional CSS utils that can be commented out */
-@import "~@ionic/angular/css/padding.css";
-@import "~@ionic/angular/css/float-elements.css";
-@import "~@ionic/angular/css/text-alignment.css";
-@import "~@ionic/angular/css/text-transformation.css";
-@import "~@ionic/angular/css/flex-utils.css";
+@import '~@ionic/angular/css/padding.css';
+@import '~@ionic/angular/css/float-elements.css';
+@import '~@ionic/angular/css/text-alignment.css';
+@import '~@ionic/angular/css/text-transformation.css';
+@import '~@ionic/angular/css/flex-utils.css';
 
 @media print {
-  html, body {
+  html,
+  body {
     width: 80mm;
   }
-  app-root > * { display: none; }
-  app-root app-print { display: block; }
+  app-root > * {
+    display: none;
+  }
+  app-root app-print {
+    display: block;
+  }
 }
 
 $primary: #4ab848;
@@ -48,18 +49,18 @@ $medium: #858585;
 $light: #999;
 
 .primario {
-    display: block;
-    width: 75vh;
-    height: 13vh;
-    margin: 5vh 0;
-    --background: var(--gradient-button);
-    --background-focused: var(--gradient-button-ligth);
-    --background-hover: var(--gradient-button-ligth);
-    --background-activated: var(--gradient-button-ligth);
-    --border-radius: 1.5vh;
-    font-weight: 300;
-    font-size: 5vh;
-    line-height: 5.5vh;
+  display: block;
+  width: 75vh;
+  height: 13vh;
+  margin: 5vh 0;
+  --background: var(--gradient-button);
+  --background-focused: var(--gradient-button-ligth);
+  --background-hover: var(--gradient-button-ligth);
+  --background-activated: var(--gradient-button-ligth);
+  --border-radius: 1.5vh;
+  font-weight: 300;
+  font-size: 5vh;
+  line-height: 5.5vh;
 }
 
 ion-header {
@@ -70,10 +71,20 @@ ion-header {
   background-color: whitesmoke;
 
   .inspiring {
-      height: 7vh;
+    height: 6vh;
+
+    img {
+      height: 6vh;
+      width: auto;
+    }
   }
 
   .febrafar {
+    height: 4.6vh;
+
+    img {
       height: 4.6vh;
+      width: auto;
+    }
   }
 }

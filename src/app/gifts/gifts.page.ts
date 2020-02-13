@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -135,5 +135,13 @@ export class GiftsPage implements OnInit {
         rede: this.rede
       }
     });
+  }
+
+  @HostListener('document:keypress', ['$event'])
+  goNext(event: KeyboardEvent) {
+    if (event.keyCode == 13 && this.totalSelected >
+       0) {
+      this.print();
+    }
   }
 }

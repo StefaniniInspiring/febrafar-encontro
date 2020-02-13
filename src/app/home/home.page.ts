@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,6 +8,12 @@ import { Router } from '@angular/router';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(private router: Router) {}
 
+  @HostListener('document:keypress', ['$event'])
+  goNext(event: KeyboardEvent) {
+    if (event.keyCode == 13) {
+      this.router.navigate(['info']);
+    }
+  }
 }
