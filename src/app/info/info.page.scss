@@ -26,7 +26,7 @@ ion-row {
     line-height: 10vh;
     text-transform: uppercase;
     color: var(--ion-color-medium);
-    z-index: 1;
+    z-index: 2;
     bottom: 20vh;
     position: absolute;
     margin: 0;
@@ -67,14 +67,14 @@ ion-row {
   .background {
     position: absolute;
     bottom: -22vh;
-    height: 125vh;
+    height: 114vh;
     z-index: 0;
   }
 
   .rede {
     z-index: 1;
-    max-width: 45vh;
-    bottom: -4vh;
+    max-width: 40vh;
+    bottom: -3vh;
     position: absolute;
   }
 }
