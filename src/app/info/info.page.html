@@ -46,7 +46,7 @@
             <small
               [ngClass]="{ 'show': errorRede, 'hide': !errorRede }"
               class="error">
-              Continue digitando...
+              Informe a sua rede
             </small>
           </div>
 
@@ -72,7 +72,18 @@
         </div>
       </ion-col>
       <ion-col size="7" class="text">
-        <img src="./../assets/imgs/cracha.svg" />
+        <img class="background" src="./../assets/imgs/cracha.svg" />
+        <h3>{{ name }}</h3>
+        <img
+          class="rede"
+          [hidden]="errorImg"
+          (error)="isErrorImg(true)"
+          (load)="isErrorImg(false)"
+          [src]="'./../assets/logos/logos_REDES-' +  redeIndex + '.svg'"
+          [alt]="rede">
+        <h4 [hidden]="!errorImg || rede == undefined || rede == ''">
+          {{ rede }}
+        </h4>
       </ion-col>
     </ion-row>
   </ion-grid>

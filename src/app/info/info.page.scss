@@ -14,16 +14,36 @@ ion-row {
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: left;
+  text-align: center;
   color: #666666;
   padding-bottom: 0;
   position: relative;
+  flex-direction: column;
 
   h3 {
-      font-weight: 900;
-      font-size: 9vh;
-      line-height: 10vh;
-      text-transform: uppercase;
+    font-weight: 900;
+    font-size: 5vh;
+    line-height: 10vh;
+    text-transform: uppercase;
+    color: var(--ion-color-medium);
+    z-index: 1;
+    bottom: 20vh;
+    position: absolute;
+    margin: 0;
+  }
+
+  h4 {
+    font-weight: 900;
+    font-size: 4vh;
+    line-height: 8vh;
+    text-transform: uppercase;
+    color: var(--ion-color-medium);
+    z-index: 1;
+    bottom: 5vh;
+    position: absolute;
+    margin: 0;
+    border: 1vh solid var(--ion-color-medium);
+    padding: 2vh;
   }
 
   span {
@@ -44,10 +64,18 @@ ion-row {
       }
   }
 
-  img {
+  .background {
     position: absolute;
     bottom: -22vh;
     height: 125vh;
+    z-index: 0;
+  }
+
+  .rede {
+    z-index: 1;
+    max-width: 45vh;
+    bottom: -4vh;
+    position: absolute;
   }
 }
 

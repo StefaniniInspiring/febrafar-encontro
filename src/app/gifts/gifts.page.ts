@@ -7,22 +7,17 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./gifts.page.scss']
 })
 export class GiftsPage implements OnInit {
-
   name = '';
   rede = '';
 
-  constructor(
-    private router: Router,
-    private activatedRoute: ActivatedRoute) {
-      this.activatedRoute.queryParams.subscribe(params => {
-        try {
-          this.name = params['name'];
-          this.rede = params['rede'];
-        } catch (error) {
-  
-        }
-      });
-    }
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) {
+    this.activatedRoute.queryParams.subscribe(params => {
+      try {
+        this.name = params['name'];
+        this.rede = params['rede'];
+      } catch (error) {}
+    });
+  }
 
   max = 3;
   hoje = new Date();
@@ -36,8 +31,8 @@ export class GiftsPage implements OnInit {
     },
     {
       selected: false,
-      name: 'Pé de moleque',
-      id: 'pe_de_moleque',
+      name: 'Pingo de Leite',
+      id: 'pingo_de_leite',
       type: 'desconto_unidade'
     },
     {
@@ -96,7 +91,7 @@ export class GiftsPage implements OnInit {
   ];
 
   ngOnInit() {}
-  
+
   select(product) {
     product.selected = !product.selected;
   }
