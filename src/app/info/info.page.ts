@@ -147,7 +147,7 @@ export class InfoPage implements OnInit {
       let fuse = new Fuse(this.redes, options);
       const found = fuse.search(value);
       if (found.length > 0) {   
-        this.found_item = found[0];   
+        this.found_item = found[0].item.name;   
       } else {
         this.found_item = "";
         this.rede = value;
