@@ -64,7 +64,7 @@ export class InfoPage implements OnInit {
     { name: 'Nova Rede Drogarias' },
     { name: 'Pix Farma' },
     { name: 'Redefarma' },
-    { name: 'maisfarma' },
+    { name: 'Maisfarma' },
     { name: 'Sanar Farmácias' },
     { name: 'SISfarma' },
     { name: 'StyloFarma' },
