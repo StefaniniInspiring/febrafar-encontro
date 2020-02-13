@@ -27,6 +27,7 @@
               required
               [(ngModel)]="name"
               placeholder="Nome do(a) convidado(a)"
+              maxLength="36"
               clear-input>
             </ion-input>
             <small
@@ -42,6 +43,7 @@
               (ionInput)="verifyRede($event)"
               required
               clear-input
+              maxLength="36"
               [(ngModel)]="rede_selected"
               placeholder="Nome da rede">
             </ion-input>
