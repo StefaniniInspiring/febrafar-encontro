@@ -15,7 +15,7 @@ export class InfoPage implements OnInit {
   errorRede = false;
   errorImg = true;
 
-  redes = [
+  redes: any[] = [
     { name: 'Asfar' },
     { name: 'Augefarma' },
     { name: 'Bigfort' },
