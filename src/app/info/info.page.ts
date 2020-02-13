@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
+import Fuse from 'fuse.js';
+
 @Component({
   selector: 'app-info',
   templateUrl: './info.page.html',
@@ -14,63 +16,63 @@ export class InfoPage implements OnInit {
   errorImg = true;
 
   redes = [
-    'Asfar',
-    'Augefarma',
-    'Bigfort',
-    'Biodrogas',
-    'Boa Farma',
-    'Cityfarma',
-    'Compre certo',
-    'Coperfarma',
-    'Droga Rede',
-    'Drogamais',
-    'Drogaria Atual',
-    'Drogaria Total',
-    'Drogarias Conceito',
-    'Drogarias Maestra',
-    'DSG Farma',
-    'Entrefarma',
-    'Farma 100',
-    'Farma & Cia',
-    'Farma & Farma',
-    'Farmácia Dias',
-    'Farmácias Associadas',
-    'Farmácias Conviva',
-    'FarmaGente',
-    'Farmagnus',
-    'AC Farma',
-    'Farmavale',
-    'Farmavip',
-    'FarMelhor',
-    'Redefarmes',
-    'Fazfarma',
-    'Grupofarma',
-    'Hiperfarma',
-    'Inova Drogarias',
-    'Drogarias Legítima',
-    'Líder Saúde',
-    'Liga Farma',
-    'Maxi Popular',
-    'Maxifarma',
-    'MG Farma',
-    'RM Farma',
-    'Farmácias Multmais',
-    'Nossa Rede',
-    'Nova Rede Drogarias',
-    'Pix Farma',
-    'Redefarma',
-    'maisfarma',
-    'Sanar Farmácias',
-    'SISfarma',
-    'StyloFarma',
-    'Super Popular',
-    'Tchê Farmácias',
-    'Uai Farma',
-    'Ultra Popular',
-    'União Farma',
-    'Unifarma',
-    'Vida Farmácias',
-    'Drogarias Viva mais'
+    { name: 'Asfar' },
+    { name: 'Augefarma' },
+    { name: 'Bigfort' },
+    { name: 'Biodrogas' },
+    { name: 'Boa Farma' },
+    { name: 'Cityfarma' },
+    { name: 'Compre certo' },
+    { name: 'Coperfarma' },
+    { name: 'Droga Rede' },
+    { name: 'Drogamais' },
+    { name: 'Drogaria Atual' },
+    { name: 'Drogaria Total' },
+    { name: 'Drogarias Conceito' },
+    { name: 'Drogarias Maestra' },
+    { name: 'DSG Farma' },
+    { name: 'Entrefarma' },
+    { name: 'Farma 100' },
+    { name: 'Farma & Cia' },
+    { name: 'Farma & Farma' },
+    { name: 'Farmácia Dias' },
+    { name: 'Farmácias Associadas' },
+    { name: 'Farmácias Conviva' },
+    { name: 'FarmaGente' },
+    { name: 'Farmagnus' },
+    { name: 'AC Farma' },
+    { name: 'Farmavale' },
+    { name: 'Farmavip' },
+    { name: 'FarMelhor' },
+    { name: 'Redefarmes' },
+    { name: 'Fazfarma' },
+    { name: 'Grupofarma' },
+    { name: 'Hiperfarma' },
+    { name: 'Inova Drogarias' },
+    { name: 'Drogarias Legítima' },
+    { name: 'Líder Saúde' },
+    { name: 'Liga Farma' },
+    { name: 'Maxi Popular' },
+    { name: 'Maxifarma' },
+    { name: 'MG Farma' },
+    { name: 'RM Farma' },
+    { name: 'Farmácias Multmais' },
+    { name: 'Nossa Rede' },
+    { name: 'Nova Rede Drogarias' },
+    { name: 'Pix Farma' },
+    { name: 'Redefarma' },
+    { name: 'maisfarma' },
+    { name: 'Sanar Farmácias' },
+    { name: 'SISfarma' },
+    { name: 'StyloFarma' },
+    { name: 'Super Popular' },
+    { name: 'Tchê Farmácias' },
+    { name: 'Uai Farma' },
+    { name: 'Ultra Popular' },
+    { name: 'União Farma' },
+    { name: 'Unifarma' },
+    { name: 'Vida Farmácias' },
+    { name: 'Drogarias Viva mais' }
   ];
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {
@@ -121,11 +123,26 @@ export class InfoPage implements OnInit {
 
   verifyRede(ev) {
     let value = ev.srcElement.value;
-    this.errorRede = value == '';
+    
+    if (value.length > 4) {      
+      const options = {
+        caseSensitive: false,
+        keys: ['name'],
+        includeScore: true,
+        threshold: 0.15
+      };
+      this.errorRede = value == '';
+      let fuse = new Fuse(this.redes, options);
+      const found = fuse.search(value);
+      if (found.length > 0) {
+        const resp = found[0];    
+        this.rede = resp.item.name;    
+      }
+    }
   }
 
   get redeIndex() {
-    return ((this.redes.findIndex(rede => rede == this.rede)) + 1).toString().padStart(2, '0');
+    return ((this.redes.findIndex(rede => rede.name == this.rede)) + 1).toString().padStart(2, '0');
   }
 
   isErrorImg(error) {
