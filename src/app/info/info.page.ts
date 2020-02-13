@@ -133,6 +133,7 @@ export class InfoPage implements OnInit {
 
   verifyRede(ev) {
     let value = ev.srcElement.value;
+    this.rede = '';
     
     if (value.length > 3) {
       this.errorTyping = false;       
@@ -149,6 +150,7 @@ export class InfoPage implements OnInit {
         this.found_item = found[0];   
       } else {
         this.found_item = "";
+        this.rede = value;
       }
     } else {
       this.errorTyping = value.length > 0;
