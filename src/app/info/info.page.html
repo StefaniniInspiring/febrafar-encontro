@@ -3,19 +3,17 @@
     <img src="../../assets/imgs/logo_inspiring.png" />
   </div>
   <div class="febrafar">
-    <img src="../../assets/imgs/logo_pec.svg" />
-    <img src="../../assets/imgs/logo_febrafar.svg" />
+    <img src="../../assets/imgs/logo_pec.png" />
+    <img src="../../assets/imgs/logo_febrafar.svg" />]
+    <img src="../../assets/imgs/vida.svg" />
   </div>
 </ion-header>
 
 <ion-content color="background">
-  <ion-button
-    routerLink="/"
-    fill="clear"
-    class="back">
-    <ion-icon color="light" mode="ios" name="arrow-back"></ion-icon>
+  <ion-button routerLink="/" fill="clear" class="back">
+    <ion-icon color="dark" mode="ios" name="arrow-back"></ion-icon>
   </ion-button>
-  
+
   <ion-grid class="ion-no-padding">
     <ion-row class="ion-no-padding">
       <ion-col size="5" class="ion-no-padding column">
@@ -28,73 +26,49 @@
               [(ngModel)]="name"
               placeholder="Nome do(a) convidado(a)"
               maxLength="36"
-              clear-input>
+              clear-input
+            >
             </ion-input>
             <small
               [ngClass]="{ 'show': errorName, 'hide': !errorName }"
-              class="error">
+              class="error"
+            >
               Informe seu primeiro nome
             </small>
-          </div>
-  
-          <h3>E sua rede?</h3>
-          <div class="input-wrapper" style="height: 17vh;">
-            <ion-input
-              (ionInput)="verifyRede($event)"
-              required
-              clear-input
-              maxLength="36"
-              [(ngModel)]="rede_selected"
-              placeholder="Nome da rede">
-            </ion-input>
-            <small
-              [ngClass]="{ 'show2': errorRede || errorTyping, 'hide': !errorRede && !errorTyping }"
-              class="error">
-              {{ errorTyping ? 'Continue digitando...' : errorRede ? 'Informe a sua rede' : ''}}
-            </small>
-            <div class="found-list" *ngIf="found_item !== ''">
-              <div class="item-found"
-                   (click)="select(found_item)">
-                {{ found_item }}
-              </div>
-            </div>
           </div>
 
           <ion-button
             (click)="continue()"
             mode="md"
             routerLink="/info"
-            class="primario">
+            class="primario"
+          >
             <ion-icon name="arrow-forward" slot="end"></ion-icon>
             Continuar
           </ion-button>
         </div>
-        <div class="detail">
-          <div class="verde">
-            <img src="./../assets/imgs/elemento_verde.png" />
-          </div>
-          <div class="amarelo">
-            <img src="./../assets/imgs/elemento_amarelo.png" />
-          </div>
-          <div class="azul">
-            <img src="./../assets/imgs/elemento_azul.png" />
-          </div>
-        </div>
+        <div class="detail"></div>
       </ion-col>
       <ion-col size="7" class="text">
         <img class="background cracha" src="./../assets/imgs/cracha.svg" />
         <h3 class="up-name">{{ name }}</h3>
         <img
           class="rede up-rede"
-          [hidden]="errorImg"
-          (error)="isErrorImg(true)"
-          (load)="isErrorImg(false)"
-          [src]="'./../assets/logos/logos_REDES-' +  redeIndex + '.svg'"
-          [alt]="rede">
-        <h4 class="up-rede" [hidden]="!errorImg || rede == undefined || rede == ''">
+          src="../../assets/imgs/vida.svg"
+          alt="logo da vida farmácias"
+        />
+        <h4
+          class="up-rede"
+          [hidden]="!errorImg || rede == undefined || rede == ''"
+        >
           {{ rede }}
         </h4>
       </ion-col>
     </ion-row>
   </ion-grid>
+  <img
+    class="bg-gosma"
+    src="../../assets/imgs/gosma.svg"
+    alt="fundo da cor vida"
+  />
 </ion-content>

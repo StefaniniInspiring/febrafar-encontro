@@ -95,11 +95,8 @@ export class InfoPage implements OnInit {
   get canContinue() {
     return (
       !this.errorName &&
-      !this.errorRede &&
       this.name != undefined &&
-      this.rede != undefined &&
-      this.name.length > 1 &&
-      this.rede.length > 1
+      this.name.length > 1
     );
   }
 
@@ -120,8 +117,7 @@ export class InfoPage implements OnInit {
 
     this.router.navigate(['gifts'], {
       queryParams: {
-        name: this.name,
-        rede: this.rede
+        name: this.name
       }
     });
   }

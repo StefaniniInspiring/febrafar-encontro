@@ -1,112 +1,179 @@
 ion-grid ion-row ion-col {
-    height: 92vh;
+  height: 92vh;
 }
 
 ion-row {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .group-text {
-    margin-bottom: 6.5vh;
+  margin-bottom: 6.5vh;
 }
 
 .text {
-    display: flex;
-    align-items: flex-end;
-    text-align: left;
-    color: #666666;
-    padding-bottom: 0;
+  display: flex;
+  align-items: flex-end;
+  text-align: left;
+  color: #666666;
+  padding-bottom: 0;
+  z-index: 2;
 
-    h3 {
-        font-weight: 900;
-        font-size: 9vh;
-        line-height: 10vh;
-        text-transform: uppercase;
+  h3 {
+    font-weight: 900;
+    font-size: 9vh;
+    line-height: 10vh;
+    text-transform: uppercase;
+  }
+
+  span {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 4.5vh;
+    line-height: 7vh;
+
+    strong {
+      font-style: normal;
+      font-weight: 900;
     }
 
-    span {
-        font-style: normal;
-        font-weight: 300;
-        font-size: 4.5vh;
-        line-height: 7vh;
-
-        strong {
-            font-style: normal;
-            font-weight: 900;
-        }
-
-        small {
-            font-weight: 900;
-            color: var(--pec);
-            font-size: 4.5vh;
-        }
+    small {
+      font-weight: 900;
+      color: var(--pec);
+      font-size: 4.5vh;
     }
+  }
 }
 
 .azul {
-    position: absolute;
-    bottom: 15vh;
-    left: -22vw;
-    animation: azul 1s forwards;
+  position: absolute;
+  bottom: 15vh;
+  left: -22vw;
+  animation: azul 1s forwards;
 }
 
 @keyframes azul {
-    0% {
-        transform: translate(-23vw, 27vh);
-    }
-    70% {
-        transform: translate(-1vw, -6vh);
-    }
-    100% {
-        transform: translate(-2vw, -3vh);       
-    }
+  0% {
+    transform: translate(-23vw, 27vh);
+  }
+  70% {
+    transform: translate(-1vw, -6vh);
+  }
+  100% {
+    transform: translate(-2vw, -3vh);
+  }
 }
 
 .azul img {
-    width: auto;
-    height: 55vh;
+  width: auto;
+  height: 55vh;
 }
 
 .verde {
-    position: absolute;
-    animation: verde 1s ease-out forwards;
+  position: absolute;
+  animation: verde 1s ease-out forwards;
 }
 
 @keyframes verde {
-    0% {
-        transform: translate(-100vw, 93vh);
-    }
-    70% {
-        transform: translate(-18vw, -1vh);
-    }
-    100% {
-        transform: translate(-20vw, 2vh);
-    }
+  0% {
+    transform: translate(-100vw, 93vh);
+  }
+  70% {
+    transform: translate(-18vw, -1vh);
+  }
+  100% {
+    transform: translate(-20vw, 2vh);
+  }
 }
 
 .verde img {
-    height: 86vh;
-    max-width: 70vw;    
+  height: 86vh;
+  max-width: 70vw;
 }
 
 .amarelo {
-    position: absolute;
-    animation: amarelo 1s ease-out forwards;
+  position: absolute;
+  animation: amarelo 1s ease-out forwards;
 }
 
 @keyframes amarelo {
-    0% {
-        transform: translate(-25vw, 93vh);
-    }
-    70% {
-        transform: translate(-4vw, 55vh);
-    }
-    100% {
-        transform: translate(-6vw, 60vh);
-    }
+  0% {
+    transform: translate(-25vw, 93vh);
+  }
+  70% {
+    transform: translate(-4vw, 55vh);
+  }
+  100% {
+    transform: translate(-6vw, 60vh);
+  }
 }
 
 .amarelo img {
-    width: auto;
-    height: 40vh;
+  width: auto;
+  height: 40vh;
+}
+
+svg {
+  z-index: 2;
+  width: 60%;
+}
+
+.squiggle {
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+  animation: draw 1s ease-in forwards;
+}
+
+.vida {
+  opacity: 0;
+  animation: show 1s 0.5s ease-in forwards;
+}
+
+.final {
+  animation: pump 0.75s 1.5s ease-in forwards;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes show {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pump {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.5);
+  }
+  50% {
+    transform: scale(1);
+  }
+  80% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bg-gosma {
+  position: fixed;
+  left: -20vw;
+  //right: -20vw;
+  bottom: -30vh;
+  width: 80vw;
+  transform: rotateY(180deg);
+  z-index: 0;
 }

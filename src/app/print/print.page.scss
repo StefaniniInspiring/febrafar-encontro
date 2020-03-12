@@ -1,13 +1,13 @@
 * {
-  font-family: 'Roboto', arial;
-  --ion-font-family: 'Roboto', arial !important;
-	--ion-default-font: 'Roboto', arial !important;
+  font-family: "Roboto", arial;
+  --ion-font-family: "Roboto", arial !important;
+  --ion-default-font: "Roboto", arial !important;
 }
 
 span,
 p {
   font-size: 5mm;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 @media print {
   .hidden-print,
@@ -18,7 +18,7 @@ p {
     display: none !important;
   }
 }
-@media (-webkit-min-device-pixel-ratio:0) {
+@media (-webkit-min-device-pixel-ratio: 0) {
   .offer {
     display: grid;
     grid-template-columns: 46mm 34mm;
@@ -55,7 +55,7 @@ p {
   width: 80mm;
   max-width: 80mm;
   display: grid;
-  grid-template-areas: 'name' 'cpf' 'logo' 'slogan' 'header' 'offers' 'endereco' 'logos' 'footer' 'download';
+  grid-template-areas: "cpf" "name" "logo" "slogan" "header" "offers" "endereco" "logos" "footer" "download";
 }
 .logo {
   grid-area: logo;
@@ -92,9 +92,9 @@ p {
   justify-self: center;
   font-size: 7mm;
   width: 80mm;
-  padding-top: 5mm;
   margin-bottom: 0;
   font-weight: bold;
+  margin-bottom: 4mm;
   text-transform: uppercase;
   text-align: center;
 }
@@ -103,7 +103,7 @@ p {
   justify-self: center;
   font-size: 5mm;
   margin: 0 3mm;
-  margin-bottom: 4mm;
+  padding-top: 5mm;
   font-weight: normal;
   text-transform: uppercase;
 }
@@ -159,19 +159,19 @@ p {
   text-align: right;
 }
 .fixed::before {
-  content: 'R$';
+  content: "R$";
   font-size: 5mm;
   font-weight: lighter;
   margin-right: 0mm;
 }
 .percentual::after {
-  content: '%';
+  content: "%";
   font-size: 5mm;
   font-weight: lighter;
   margin-left: -1mm;
 }
 .quantidade::before {
-  content: 'LEVE ';
+  content: "LEVE ";
   letter-spacing: 0mm;
   font-size: 5mm;
   font-weight: lighter;

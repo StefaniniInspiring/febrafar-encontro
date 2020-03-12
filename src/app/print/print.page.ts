@@ -12,7 +12,6 @@ export class PrintPage implements OnInit {
       try {
         this.ids = JSON.parse(params['indexes']);
         this.name = params['name'];
-        this.rede = params['rede'];
       } catch (error) {}
     });
   }
@@ -94,7 +93,8 @@ export class PrintPage implements OnInit {
   ionViewDidEnter() {
     setTimeout(() => {
       window.print();
-      this.goBack();
+      
+      //this.goBack();
     }, 1000);
   }
 

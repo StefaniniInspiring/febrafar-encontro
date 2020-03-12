@@ -14,7 +14,6 @@ export class GiftsPage implements OnInit {
     this.activatedRoute.queryParams.subscribe(params => {
       try {
         this.name = params['name'];
-        this.rede = params['rede'];
       } catch (error) {}
     });
   }
@@ -122,8 +121,7 @@ export class GiftsPage implements OnInit {
     this.router.navigate(['/print'], {
       queryParams: {
         indexes: JSON.stringify(indexArray),
-        name: this.name,
-        rede: this.rede
+        name: this.name
       }
     });
   }
@@ -131,8 +129,7 @@ export class GiftsPage implements OnInit {
   back() {
     this.router.navigate(['/info'], {
       queryParams: {
-        name: this.name,
-        rede: this.rede
+        name: this.name
       }
     });
   }

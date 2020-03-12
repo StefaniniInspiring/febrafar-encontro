@@ -19,6 +19,7 @@ ion-row {
   padding-bottom: 0;
   position: relative;
   flex-direction: column;
+  z-index: 2;
 
   h3 {
     font-weight: 900;
@@ -57,21 +58,21 @@ ion-row {
   }
 
   span {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 4.5vh;
+    line-height: 7vh;
+
+    strong {
       font-style: normal;
-      font-weight: 300;
+      font-weight: 900;
+    }
+
+    small {
+      font-weight: 900;
+      color: var(--pec);
       font-size: 4.5vh;
-      line-height: 7vh;
-
-      strong {
-          font-style: normal;
-          font-weight: 900;
-      }
-
-      small {
-          font-weight: 900;
-          color: var(--pec);
-          font-size: 4.5vh;
-      }
+    }
   }
 
   .background {
@@ -83,8 +84,8 @@ ion-row {
 
   .rede {
     z-index: 1;
-    max-width: 40vh;
-    bottom: -3vh;
+    max-width: 25vh;
+    bottom: 1vh;
     position: absolute;
   }
 }
@@ -104,12 +105,11 @@ ion-row {
   position: absolute;
   bottom: 4vh;
   left: -20vw;
-  
 }
 
 .verde img {
   height: 86vh;
-  max-width: 70vw;    
+  max-width: 70vw;
 }
 
 .amarelo {
@@ -141,7 +141,7 @@ ion-row {
 
   h3 {
     width: 100%;
-    color: white;
+    color: var(--pec);
     text-align: left;
     font-weight: 900;
     font-size: 3.5vh;
@@ -199,7 +199,8 @@ ion-content {
   right: 0;
   bottom: 0;
   color: var(--ion-color-danger);
-  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
+    1px 1px 0 #fff;
 
   &.show {
     animation: show 0.1s linear forwards;
@@ -275,11 +276,11 @@ ion-content {
 }
 
 .found-list {
-    background-color: white;
-    border-radius: 1vh;
-    padding: 2vh;
-    margin-top: 1vh;
-    animation: drop_lst 0.2s forwards;
+  background-color: white;
+  border-radius: 1vh;
+  padding: 2vh;
+  margin-top: 1vh;
+  animation: drop_lst 0.2s forwards;
 
   .item-found {
     font-size: 3vh;
@@ -302,4 +303,14 @@ ion-content {
   100% {
     transform: translateY(0vh);
   }
+}
+
+.bg-gosma {
+  position: fixed;
+  left: -20vw;
+  //right: -20vw;
+  bottom: -30vh;
+  width: 80vw;
+  transform: rotateY(180deg);
+  z-index: 0;
 }
