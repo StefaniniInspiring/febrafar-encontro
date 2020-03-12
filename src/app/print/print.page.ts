@@ -94,7 +94,7 @@ export class PrintPage implements OnInit {
     setTimeout(() => {
       window.print();
       
-      //this.goBack();
+      this.goBack();
     }, 1000);
   }
 
