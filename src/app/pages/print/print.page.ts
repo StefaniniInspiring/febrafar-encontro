@@ -102,6 +102,8 @@ export class PrintPage implements OnInit {
   goBack() {
     this.router.navigate(['/']).then(() => {
       window.dispatchEvent(new Event('endTracking'));
+
+      this.analytics.trackPrint();
       
       this.ids.map(id => {
         this.analytics.trackGift(this.products[id]);

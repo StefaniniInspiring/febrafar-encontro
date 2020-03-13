@@ -19,14 +19,21 @@ export class AnalyticsService {
     });
   }
 
+  trackPrint(): void {
+    gtag('event', 'print', {
+      event_category: 'print'
+    });
+  }
+
   trackGift(brinde: any): void {
     const attributes = {
-      event_category: brinde.type,
-      event_label: brinde.name
+      event_category: 'brinde',
+      event_label: brinde.type,
+      value: brinde.name
     };
 
     //console.log('print: ', attributes);
-    gtag('event', 'print', attributes);
+    gtag('event', 'brinde', attributes);
   }
 
   trackTiming(ms: number) {
