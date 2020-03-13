@@ -1,19 +1,18 @@
 {
   "hosting": {
+    "site": "encontro-vida",
     "public": "www",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
+      {
+        "source": "/www/**",
+        "destination": "/public.html"
+      },
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
     ],
-    "rewrites": [{
-      "source": "/www/**",
-      "destination": "/public.html"
-    },
-    {
-      "source": "**",
-      "destination": "/index.html"
-    }],
     "headers": [
       {
         "source": "**",
