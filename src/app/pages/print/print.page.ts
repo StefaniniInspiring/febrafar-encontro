@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AnalyticsService } from 'src/app/services/analytics.service';
 
 @Component({
   selector: 'app-print',
@@ -7,7 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./print.page.scss']
 })
 export class PrintPage implements OnInit {
-  constructor(private activatedRoute: ActivatedRoute, private router: Router) {
+  constructor(private activatedRoute: ActivatedRoute, private router: Router, private analytics: AnalyticsService) {
     this.activatedRoute.queryParams.subscribe(params => {
       try {
         this.ids = JSON.parse(params['indexes']);
@@ -99,6 +100,12 @@ export class PrintPage implements OnInit {
   }
 
   goBack() {
-    this.router.navigate(['/']);
+    this.router.navigate(['/']).then(() => {
+      window.dispatchEvent(new Event('endTracking'));
+      
+      this.ids.map(id => {
+        this.analytics.trackGift(this.products[id]);
+      });
+    });
   }
 }

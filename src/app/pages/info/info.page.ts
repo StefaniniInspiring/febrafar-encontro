@@ -87,6 +87,8 @@ export class InfoPage implements OnInit {
         this.name = '';
         this.rede = '';
       }
+
+      window.dispatchEvent(new Event('startTracking'));
     });
   }
 
