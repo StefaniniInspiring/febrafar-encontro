@@ -8,7 +8,17 @@ declare var gtag;
 export class AnalyticsService {
   started = 0;
 
-  constructor() {}
+  constructor() {
+    this.configureDimension();
+  }
+
+  configureDimension() {
+    gtag('config', environment.gtagId, {
+      custom_map: {
+        'dimension1': 'brindeNome'
+      }
+    });
+  }
 
   trackPage(page: string): void {
     //console.log('track page: ', `/${page}`);
@@ -26,10 +36,12 @@ export class AnalyticsService {
   }
 
   trackGift(brinde: any): void {
+    this.configureDimension();
+
     const attributes = {
       event_category: 'brinde',
       event_label: brinde.type,
-      value: brinde.name
+      brindeNome: brinde.name
     };
 
     //console.log('print: ', attributes);
